@@ -82,6 +82,113 @@ val recipes = listOf(
             Comment("GRILLMASTER", "6.20.2023", "The tips for forming the patties were spot on. Juicy results!")
         )
     ),
+    Recipe(
+        "Fantastic Pizza",
+        "Pizza is an iconic dish that combines a crispy crust with an endless variety of fresh ingredients. Discover how to make the perfect pizza to share with your loved ones. Check out the award-winning recipe and photo tutorial from \"What's Cooking in America\" to make the perfect pizza at home.",
+        com.joseruiz.project_recipes.R.drawable.pizza,
+        listOf(
+            "2 1/4 teaspoons active dry yeast",
+            "1 1/2 cups warm water",
+            "3 1/2 cups all-purpose flour",
+            "1 tablespoon olive oil",
+            "1 teaspoon salt",
+            "1/2 cup pizza sauce",
+            "1 1/2 cups shredded mozzarella cheese",
+            "Your favorite toppings (pepperoni, vegetables, etc.)"
+        ),
+        listOf(
+            "In a small bowl, dissolve yeast in warm water and let it sit for about 5 minutes.",
+            "In a large bowl, combine flour and salt. Add the yeast mixture and olive oil, mixing until dough forms.",
+            "Knead the dough on a floured surface until smooth. Let rise in a warm place for 1 hour.",
+            "Preheat oven to 475°F (245°C). Roll out dough on a floured surface to desired thickness.",
+            "Spread pizza sauce over the dough, add cheese and toppings. Bake for 12-15 minutes until crust is golden and cheese is bubbly."
+        ),
+        listOf(
+            Comment("PIZZA FANATIC", "8.25.2023", "This pizza was a hit with my family! The crust was perfectly crispy."),
+            Comment("CHEF JOHN", "8.26.2023", "Great recipe! The detailed steps helped me make the perfect pizza.")
+        )
+    ),
+    Recipe(
+        "Classic Lasagna",
+        "Lasagna is a comforting dish that combines layers of pasta, meat, and cheese in a delicious harmony of flavors. Learn how to make the perfect lasagna to enjoy with your family. Check out the award-winning recipe and detailed tutorial from \"What's Cooking in America\" to make a lasagna that everyone will love.",
+        com.joseruiz.project_recipes.R.drawable.lasagna,
+        listOf(
+            "1 pound ground beef",
+            "1 onion, chopped",
+            "2 cloves garlic, minced",
+            "1 can (28 ounces) crushed tomatoes",
+            "2 tablespoons tomato paste",
+            "1 teaspoon dried basil",
+            "1 teaspoon dried oregano",
+            "12 lasagna noodles",
+            "2 cups ricotta cheese",
+            "2 cups shredded mozzarella cheese",
+            "1/2 cup grated Parmesan cheese",
+            "Salt and pepper to taste"
+        ),
+        listOf(
+            "Preheat oven to 375°F (190°C).",
+            "In a skillet, cook ground beef, onion, and garlic until beef is browned. Drain excess fat.",
+            "Stir in crushed tomatoes, tomato paste, basil, and oregano. Simmer for 15 minutes. Season with salt and pepper.",
+            "Cook lasagna noodles according to package instructions. Drain and set aside.",
+            "In a baking dish, layer noodles, meat sauce, ricotta cheese, and mozzarella cheese. Repeat layers and top with Parmesan cheese.",
+            "Bake for 45 minutes. Let cool for 10 minutes before serving."
+        ),
+        listOf(
+            Comment("LASAGNA LOVER", "8.30.2023", "This lasagna was delicious and easy to make. Perfect for family dinners!"),
+            Comment("COOKING ENTHUSIAST", "8.31.2023", "The layers came out perfect and the taste was just right. Highly recommend this recipe.")
+        )
+    ),
+    Recipe(
+        "Delicious Tacos",
+        "Tacos are a dish full of flavor and tradition that offers a wide variety of combinations. Discover how to make delicious tacos that your guests will love. Check out the award-winning recipe and tutorial from \"What's Cooking in America\" to make perfect tacos at home.",
+        com.joseruiz.project_recipes.R.drawable.tacos,
+        listOf(
+            "1 pound ground beef",
+            "1 tablespoon taco seasoning",
+            "8 taco shells",
+            "1 cup shredded lettuce",
+            "1 cup diced tomatoes",
+            "1/2 cup chopped onions",
+            "1/2 cup shredded cheddar cheese",
+            "Sour cream and salsa for serving"
+        ),
+        listOf(
+            "In a skillet, cook ground beef over medium heat until browned. Drain excess fat.",
+            "Add taco seasoning to beef and mix well. Cook for another 5 minutes.",
+            "Warm taco shells according to package instructions.",
+            "Assemble tacos by adding seasoned beef to shells, then topping with lettuce, tomatoes, onions, and cheese.",
+            "Serve with sour cream and salsa."
+        ),
+        listOf(
+            Comment("TACO TUESDAY FAN", "9.01.2023", "These tacos were a hit at my party! Simple and tasty."),
+            Comment("MEXICAN FOOD LOVER", "9.02.2023", "Great recipe! The seasoning was just perfect for the ground beef.")
+        )
+    ),
+    Recipe(
+        "Exquisite Lobster",
+        "Lobster is an exquisite delicacy that offers a luxurious culinary experience. Learn how to cook perfect lobster to impress on any special occasion. Check out the award-winning recipe and photo tutorial from \"What's Cooking in America\" to prepare lobster like a professional chef.",
+        com.joseruiz.project_recipes.R.drawable.langosta,
+        listOf(
+            "4 live lobsters",
+            "4 quarts water",
+            "1/4 cup salt",
+            "1/4 cup unsalted butter, melted",
+            "2 tablespoons lemon juice",
+            "1 tablespoon chopped fresh parsley"
+        ),
+        listOf(
+            "Bring a large pot of water to a boil. Add salt.",
+            "Add lobsters to the boiling water and cook for 8-10 minutes until shells turn bright red.",
+            "Remove lobsters and let cool slightly.",
+            "In a small bowl, mix melted butter with lemon juice and parsley.",
+            "Serve lobster with the butter mixture for dipping."
+        ),
+        listOf(
+            Comment("LOBSTER LOVER", "9.05.2023", "The lobster turned out amazing! The butter dip was perfect."),
+            Comment("SEAFOOD CHEF", "9.06.2023", "This recipe is fantastic for a special occasion. The lobster was cooked to perfection.")
+        )
+    )
 )
 
 @Composable
@@ -92,8 +199,7 @@ fun RecipeDetailScreen(recipeName: String) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(scrollState)
-            .padding(16.dp),
+            .verticalScroll(scrollState),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
@@ -115,13 +221,14 @@ fun RecipeImageSection(imageResourceId: Int) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
+
     ) {
         Image(
             painter = painterResource(id = imageResourceId),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
-                .height(200.dp)
+                .height(250.dp)
                 .fillMaxWidth()
         )
         IconButton(
@@ -146,7 +253,9 @@ fun RecipeTitleSection(title: String, description: String, modifier: Modifier = 
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .padding(top = 16.dp),
+            .padding(top = 16.dp)
+            .padding(start = 16.dp)
+            .padding(end = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally // Centrar el contenido del Column
     ) {
         Row(
@@ -187,7 +296,9 @@ fun ShoppingListSection(ingredients: List<String>, modifier: Modifier = Modifier
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .padding(top = 16.dp),
+            .padding(top = 16.dp)
+            .padding(start = 16.dp)
+            .padding(end = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Icon(
@@ -215,7 +326,9 @@ fun PreparationSection(steps: List<String>, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .padding(top = 16.dp),
+            .padding(top = 16.dp)
+            .padding(start = 16.dp)
+            .padding(end = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Icon(
@@ -244,12 +357,14 @@ fun CommentsSection(comments: List<Comment>) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 16.dp)
+            .padding(start = 16.dp)
+            .padding(end = 16.dp)
     ) {
         Icon(
             painter = painterResource(id = com.joseruiz.project_recipes.R.drawable.ic_comment),
             contentDescription = null,
             tint = Color(0xFFEB5757),
-            modifier = Modifier.size(30.dp)
+            modifier = Modifier.size(35.dp)
                 .align(Alignment.CenterHorizontally)
                 .padding(bottom = 8.dp)
         )
@@ -299,7 +414,7 @@ fun CommentInputSection() {
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 16.dp)
+            .padding(16.dp)
     ) {
         TextField(
             value = "",
@@ -312,7 +427,7 @@ fun CommentInputSection() {
 
             )
         IconButton(
-            onClick = { /* Handle send comment */ },
+            onClick = { /* Logica de publicar comentario */ },
             modifier = Modifier.size(48.dp)
         ) {
             Icon(
@@ -323,15 +438,8 @@ fun CommentInputSection() {
     }
 }
 
-/*@Preview(showBackground = true)
-@Composable
-fun RecipeDetailScreenPreview() {
-    RecipeDetailScreen()
-}
- */
-
 @Preview(showBackground = true)
 @Composable
 fun RecipeDetailScreenPreview() {
-    RecipeDetailScreen(recipeName = "Perfect Burger")
+    RecipeDetailScreen(recipeName = "Exquisite Lobster")
 }

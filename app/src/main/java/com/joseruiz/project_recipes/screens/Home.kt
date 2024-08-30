@@ -120,17 +120,17 @@ fun RecipeCarousel(navController: NavController) {
     )
 
     val recipeTitles = listOf(
-        "Perfect Burger", "Pizza", "Prime Rib Roast",
-        "Lasaña", "Tacos", "Langosta"
+        "Perfect Burger", "Fantastic Pizza", "Prime Rib Roast",
+        "Classic Lasagna", "Delicious Tacos", "Exquisite Lobster"
     )
 
     val contentRecipes = listOf(
-        "La hamburguesa es un clásico de la cocina rápida, conocida por su sabor jugoso y su versatilidad. Aprende a preparar la hamburguesa perfecta para deleitar a tu familia y amigos. Consulta la receta galardonada y el tutorial paso a paso de \"Lo que se Cocina en América\" para ayudarte a hacer la hamburguesa ideal.",
-        "La pizza es un plato emblemático que combina una base crujiente con una variedad infinita de ingredientes frescos. Descubre cómo preparar la pizza perfecta para compartir con tus seres queridos. Revisa la receta premiada y el tutorial fotográfico de \"Lo que se Cocina en América\" para hacer la pizza ideal en tu hogar.",
-        "El asado es una tradición culinaria rica y sabrosa, ideal para reuniones familiares y celebraciones. Aprende a hacer un asado perfecto que cautivará a todos en tu mesa. Consulta la receta galardonada y el tutorial de \"Lo que se Cocina en América\" para lograr el asado perfecto.",
-        "La lasaña es un plato reconfortante que combina capas de pasta, carne y queso en una deliciosa armonía de sabores. Aprende a preparar la lasaña perfecta para disfrutar en familia. Revisa la receta premiada y el tutorial detallado de \"Lo que se Cocina en América\" para hacer una lasaña que todos adorarán.",
-        "Los tacos son un plato lleno de sabor y tradición que ofrece una gran variedad de combinaciones. Descubre cómo preparar tacos deliciosos que encantarán a tus invitados. Consulta la receta galardonada y el tutorial de \"Lo que se Cocina en América\" para hacer tacos perfectos en casa.",
-        "La langosta es un manjar exquisito que ofrece una experiencia culinaria de lujo. Aprende a cocinar langosta perfecta para impresionar en cualquier ocasión especial. Consulta la receta premiada y el tutorial fotográfico de \"Lo que se Cocina en América\" para preparar langosta como un chef profesional."
+        "The burger is a classic of fast food, known for its juicy flavor and versatility. Learn how to make the perfect burger to delight your family and friends. Check out the award-winning recipe and step-by-step tutorial from \"What's Cooking in America\" to help you make the perfect burger.",
+        "Pizza is an iconic dish that combines a crispy crust with an endless variety of fresh ingredients. Discover how to make the perfect pizza to share with your loved ones. Check out the award-winning recipe and photo tutorial from \"What's Cooking in America\" to make the perfect pizza at home.",
+        "The Prime Rib Roast is a classic and tender cut of beef taken from the rib primal cut. Learn how to make the perfect prime rib roast to serve your family and friends. Check out What's Cooking America's award-winning Classic Prime Rib Roast recipe and photo tutorial to help you make the Perfect Prime Rib Roast.",
+        "Lasagna is a comforting dish that combines layers of pasta, meat, and cheese in a delicious harmony of flavors. Learn how to make the perfect lasagna to enjoy with your family. Check out the award-winning recipe and detailed tutorial from \"What's Cooking in America\" to make a lasagna that everyone will love.",
+        "Tacos are a dish full of flavor and tradition that offers a wide variety of combinations. Discover how to make delicious tacos that your guests will love. Check out the award-winning recipe and tutorial from \"What's Cooking in America\" to make perfect tacos at home.",
+        "Lobster is an exquisite delicacy that offers a luxurious culinary experience. Learn how to cook perfect lobster to impress on any special occasion. Check out the award-winning recipe and photo tutorial from \"What's Cooking in America\" to prepare lobster like a professional chef.",
     )
 
     val cookingTimes = listOf("5HR", "2HR", "30MIN", "1HR", "45MIN", "1.5HR")
@@ -210,13 +210,16 @@ fun RecipeCarousel(navController: NavController) {
                 Text(
                     text = contentRecipes[page],
                     style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(8.dp)
+                    textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .fillMaxWidth()
+                        .align(Alignment.CenterHorizontally)
                 )
             }
         }
     }
 }
-
 
 @Composable
 fun RecipeScreen(navController: NavController) {
