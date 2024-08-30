@@ -4,6 +4,7 @@ package com.joseruiz.project_recipes.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -28,10 +29,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import kotlinx.coroutines.launch
 
 @Composable
-fun MenuScreen() {
+fun MenuScreen(navController: NavController) {
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
@@ -51,7 +53,12 @@ fun MenuScreen() {
                         text = "POPULAR RECIPES",
                         fontSize = 16.sp,
                         color = Color.White,
-                        modifier = Modifier.padding(vertical = 8.dp)
+                        modifier = Modifier
+                            .padding(vertical = 8.dp)
+                            .clickable {
+                                // Navegar a la pantalla del menú
+                                navController.navigate("home")
+                            }
                     )
                     Text(
                         text = "SAVED RECIPES",
@@ -133,21 +140,8 @@ fun MenuScreen() {
                         )
                     )
                 }
-
             }
-
-
 
         }
     )
 }
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-
-        MenuScreen()
-
-}
-
-
