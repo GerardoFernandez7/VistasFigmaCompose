@@ -120,14 +120,13 @@ fun SuccessDialog(onDismiss: () -> Unit) {
 fun SocialMediaIcon(icon: Painter) {
     Box(
         modifier = Modifier
-            .size(40.dp)
-            .background(color = Color(0xFFE74C3C), shape = CircleShape),
+            .size(40.dp),
         contentAlignment = Alignment.Center
     ) {
         Image(
             painter = icon,
             contentDescription = null,
-            modifier = Modifier.size(24.dp)
+            modifier = Modifier.size(30.dp)
         )
     }
 }
