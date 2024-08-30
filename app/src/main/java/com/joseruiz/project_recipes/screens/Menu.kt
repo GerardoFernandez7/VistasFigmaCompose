@@ -43,6 +43,7 @@ fun MenuScreen(navController: NavController) {
             Column(
                 modifier = Modifier
                     .fillMaxHeight()
+                    .width(300.dp)
                     .background(Color(0xFFE57373)) // Fondo rojo
                     .padding(16.dp),
                 verticalArrangement = Arrangement.SpaceBetween
@@ -80,22 +81,24 @@ fun MenuScreen(navController: NavController) {
                     )
                 }
 
-                // Perfil del usuario
                 Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(25.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Image(
                         painter = painterResource(id = com.joseruiz.project_recipes.R.drawable.receta), // Reemplaza con tu recurso de imagen
                         contentDescription = "User Avatar",
                         modifier = Modifier
-                            .size(50.dp)
+                            .size(60.dp)
                             .clip(CircleShape),
                         contentScale = ContentScale.Crop
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
                         text = "Menú",
-                        fontSize = 16.sp,
+                        fontSize = 19.sp,
                         color = Color.White
                     )
                 }
@@ -114,7 +117,7 @@ fun MenuScreen(navController: NavController) {
                     },
                     modifier = Modifier.align(Alignment.TopEnd).padding(16.dp)
                 ) {
-                    Icon(Icons.Default.Menu, contentDescription = "Open Menu")
+                    Icon(Icons.Default.Menu, contentDescription = "Open Menu", tint = Color.White)
                 }
 
                 Column(
