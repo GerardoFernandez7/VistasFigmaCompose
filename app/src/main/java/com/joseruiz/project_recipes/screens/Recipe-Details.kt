@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.*
 
+// Estructura de las recetas
 data class Recipe(
     val title: String,
     val description: String,
@@ -29,6 +30,7 @@ data class Recipe(
     val comments: List<Comment>
 )
 
+// Estructura de los comentarios
 data class Comment(
     val userName: String,
     val date: String,
@@ -194,6 +196,8 @@ val recipes = listOf(
     )
 )
 
+
+// Funcion principal de de los detalles de cada receta
 @Composable
 fun RecipeDetailScreen(recipeName: String) {
     val scrollState = rememberScrollState()
@@ -253,7 +257,7 @@ fun RecipeImageSection(imageResourceId: Int) {
         // Mostrar el diálogo si el estado showDialog es true
         if (showDialog) {
             SuccessDialog(onDismiss = {
-                showDialog = false
+                showDialog = false // Cerrar showDialog
             })
         }
     }
@@ -417,8 +421,6 @@ fun CommentItem(comment: Comment) {
     }
 }
 
-// CommentInputSection remains the same...
-
 @Composable
 fun CommentInputSection() {
     Row(
@@ -429,7 +431,7 @@ fun CommentInputSection() {
     ) {
         TextField(
             value = "",
-            onValueChange = { /* Handle text change */ },
+            onValueChange = {},
             placeholder = { Text(text = "Type your comment here...") },
             modifier = Modifier
                 .weight(1f)
