@@ -1,7 +1,5 @@
 package com.joseruiz.project_recipes.screens
 
-
-
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -32,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import kotlinx.coroutines.launch
 
+//Función que permite realizar la creación del composable MENU
 @Composable
 fun MenuScreen(navController: NavController) {
     val drawerState = rememberDrawerState(DrawerValue.Closed)

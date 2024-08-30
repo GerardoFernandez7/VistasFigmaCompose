@@ -35,6 +35,7 @@ data class Comment(
     val commentText: String
 )
 
+//Se realizó la creación de la data de las 6 recetas para posteriormente ser utilizada
 val recipes = listOf(
     Recipe(
         "Prime Rib Roast",
