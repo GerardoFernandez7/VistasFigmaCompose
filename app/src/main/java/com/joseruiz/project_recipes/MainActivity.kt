@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import com.joseruiz.project_recipes.screens.MenuScreen
 import com.joseruiz.project_recipes.screens.RecipeScreen
 import com.joseruiz.project_recipes.ui.theme.ProjectRecipesTheme
+import com.joseruiz.project_recipes.screens.RecipeDetailScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +25,12 @@ class MainActivity : ComponentActivity() {
                     }
                     composable(route = "home"){
                         RecipeScreen(navController = navController)
+                    }
+                    composable("recipe_detail/{recipeName}") { backStackEntry ->
+                        val recipeName = backStackEntry.arguments?.getString("recipeName")
+                        if (recipeName != null) {
+                            RecipeDetailScreen(recipeName = recipeName)
+                        }
                     }
                 }
             }

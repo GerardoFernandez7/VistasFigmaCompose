@@ -2,6 +2,7 @@ package com.joseruiz.project_recipes.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -107,7 +108,7 @@ fun CategoryTabs() {
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun RecipeCarousel() {
+fun RecipeCarousel(navController: NavController) {
     // Imágenes de las recetas
     val images = listOf(
         R.drawable.hamburguesa,
@@ -119,7 +120,7 @@ fun RecipeCarousel() {
     )
 
     val recipeTitles = listOf(
-        "Hamburguesa", "Pizza", "Asado Argentino",
+        "Perfect Burger", "Pizza", "Prime Rib Roast",
         "Lasaña", "Tacos", "Langosta"
     )
 
@@ -162,6 +163,10 @@ fun RecipeCarousel() {
                         .fillMaxWidth()
                         .height(200.dp)
                         .clip(RoundedCornerShape(8.dp))
+                        .clickable {
+                            // Navegar a otra vista pasando el nombre de la receta
+                            navController.navigate("recipe_detail/${recipeTitles[page]}")
+                        }
                 )
 
                 // Título de la receta
@@ -222,7 +227,7 @@ fun RecipeScreen(navController: NavController) {
     ) {
         Header()
         CategoryTabs()
-        RecipeCarousel()
+        RecipeCarousel(navController)
     }
 }
 
