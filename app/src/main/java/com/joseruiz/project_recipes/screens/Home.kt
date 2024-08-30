@@ -230,10 +230,3 @@ fun RecipeScreen(navController: NavController) {
         RecipeCarousel(navController)
     }
 }
-
-
-
-
-
-
-

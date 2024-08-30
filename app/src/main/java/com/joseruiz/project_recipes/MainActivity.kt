@@ -11,6 +11,7 @@ import com.joseruiz.project_recipes.screens.MenuScreen
 import com.joseruiz.project_recipes.screens.RecipeScreen
 import com.joseruiz.project_recipes.ui.theme.ProjectRecipesTheme
 import com.joseruiz.project_recipes.screens.RecipeDetailScreen
+import com.joseruiz.project_recipes.screens.SuccessDialog
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,9 +28,12 @@ class MainActivity : ComponentActivity() {
                         RecipeScreen(navController = navController)
                     }
                     composable("recipe_detail/{recipeName}") { backStackEntry ->
-                        val recipeName = backStackEntry.arguments?.getString("recipeName")
-                        if (recipeName != null) {
-                            RecipeDetailScreen(recipeName = recipeName)
+                        val recipeName = backStackEntry.arguments?.getString("recipeName") ?: ""
+                        RecipeDetailScreen(recipeName)
+                    }
+                    composable(route = "details"){
+                        SuccessDialog {
+
                         }
                     }
                 }

@@ -82,7 +82,6 @@ val recipes = listOf(
             Comment("GRILLMASTER", "6.20.2023", "The tips for forming the patties were spot on. Juicy results!")
         )
     ),
-    // Add other recipes here...
 )
 
 @Composable
@@ -97,6 +96,7 @@ fun RecipeDetailScreen(recipeName: String) {
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+
         RecipeImageSection(recipe.imageResourceId)
         RecipeTitleSection(recipe.title, recipe.description)
         Spacer(modifier = Modifier.height(16.dp))
@@ -117,7 +117,7 @@ fun RecipeImageSection(imageResourceId: Int) {
             .fillMaxWidth()
     ) {
         Image(
-            painter = painterResource(id = com.joseruiz.project_recipes.R.drawable.prime_roast),
+            painter = painterResource(id = imageResourceId),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
@@ -168,17 +168,14 @@ fun RecipeTitleSection(title: String, description: String, modifier: Modifier = 
         }
         Spacer(modifier = Modifier.height(8.dp))  // Espacio entre las estrellas y el título
         Text(
-            text = "Prime Rib Roast",
+            text = title,
             fontWeight = FontWeight.Bold,
             fontSize = 24.sp,
             color = Color(0xFF19597D)
         )
         Spacer(modifier = Modifier.height(8.dp))  // Espacio entre el título y la descripción
         Text(
-            text = "The Prime Rib Roast is a classic and tender cut of beef taken from the rib primal cut.  " +
-                    "Learn how to make the perfect prime rib roast to serve your family and friends.  Check " +
-                    "out What’s Cooking America’s award-winning Classic Prime Rib Roast recipe and photo tutorial " +
-                    "to help you make the Perfect Prime Rib Roast.",
+            text = description,
             fontSize = 16.sp,
             textAlign = androidx.compose.ui.text.style.TextAlign.Center // Alinear el texto al centro
         )
