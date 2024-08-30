@@ -251,7 +251,7 @@ fun RecipeImageSection(imageResourceId: Int) {
                 contentDescription = null,
                 tint = Color.White,
                 modifier = Modifier.padding(top = 3.dp)
-                    .size(24.dp)
+                    .size(34.dp)
             )
         }
         // Mostrar el diálogo si el estado showDialog es true
@@ -341,9 +341,7 @@ fun PreparationSection(steps: List<String>, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .padding(top = 16.dp)
-            .padding(start = 16.dp)
-            .padding(end = 16.dp),
+            .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Icon(
@@ -357,7 +355,7 @@ fun PreparationSection(steps: List<String>, modifier: Modifier = Modifier) {
             fontWeight = FontWeight.Bold,
             fontSize = 20.sp,
             color = Color(0xFF19597D),
-            modifier = Modifier.padding(bottom = 8.dp)
+            modifier = Modifier.padding(bottom = 8.dp).padding(start = 18.dp)
         )
 
         steps.forEachIndexed { index, step ->
