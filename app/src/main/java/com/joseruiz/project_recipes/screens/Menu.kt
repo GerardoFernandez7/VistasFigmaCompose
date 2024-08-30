@@ -116,7 +116,11 @@ fun MenuScreen(navController: NavController) {
                     },
                     modifier = Modifier.align(Alignment.TopEnd).padding(16.dp)
                 ) {
-                    Icon(Icons.Default.Menu, contentDescription = "Open Menu", tint = Color.White)
+                    Icon(
+                        Icons.Default.Menu, contentDescription = "Open Menu",
+                        tint = Color.White,
+                        modifier = Modifier.size(32.dp)
+                    )
                 }
 
                 Column(
