@@ -1,6 +1,7 @@
 package com.joseruiz.project_recipes.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
@@ -17,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.runtime.*
 
 data class Recipe(
     val title: String,
@@ -218,6 +220,8 @@ fun RecipeDetailScreen(recipeName: String) {
 
 @Composable
 fun RecipeImageSection(imageResourceId: Int) {
+    var showDialog by remember { mutableStateOf(false) }
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -232,7 +236,7 @@ fun RecipeImageSection(imageResourceId: Int) {
                 .fillMaxWidth()
         )
         IconButton(
-            onClick = { /* Logica de boton fav */ },
+            onClick = { showDialog = true }, // Cambia el estado a true al hacer clic
             modifier = Modifier
                 .align(Alignment.TopEnd)
                 .padding(1.dp)
@@ -244,6 +248,12 @@ fun RecipeImageSection(imageResourceId: Int) {
                 modifier = Modifier.padding(top = 3.dp)
                     .size(24.dp)
             )
+        }
+        // Mostrar el diálogo si el estado showDialog es true
+        if (showDialog) {
+            SuccessDialog(onDismiss = {
+                showDialog = false
+            })
         }
     }
 }

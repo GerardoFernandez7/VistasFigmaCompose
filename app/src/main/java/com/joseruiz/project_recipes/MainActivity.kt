@@ -31,11 +31,6 @@ class MainActivity : ComponentActivity() {
                         val recipeName = backStackEntry.arguments?.getString("recipeName") ?: ""
                         RecipeDetailScreen(recipeName)
                     }
-                    composable(route = "details"){
-                        SuccessDialog {
-
-                        }
-                    }
                 }
             }
         }
